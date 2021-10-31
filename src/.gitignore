@@ -459,3 +459,4 @@ $RECYCLE.BIN/
 ##Ignore General
 *.pub
 BIO360
+.vscode

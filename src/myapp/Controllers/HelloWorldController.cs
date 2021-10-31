@@ -3,15 +3,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace myapp.Controllers
 {
-    public class HelloWorldController
+    public class HelloWorldController : Controller
     {
-        public IActionResult Index(){
+        public IActionResult Index()
+        {
             return View();
         }
 
 
-        public string Welcome(string name, int ID = 1){
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+        public IActionResult Welcome(string name, int numTimes = 1){
+           
+           ViewData["Message"] = "Hello " + name;
+           ViewData["NumTimes"] = numTimes;
+          
+            // return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+
+            return View();
         }
     }
 }
